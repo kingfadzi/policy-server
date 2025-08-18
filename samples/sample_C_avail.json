@@ -1,0 +1,8 @@
+{
+  "input": {
+    "criticality": "C",
+    "security": "B", "integrity": "B", "availability": "A",
+    "resilience": "B", "confidentiality": "B",
+    "has_dependencies": false
+  }
+}
