@@ -383,7 +383,7 @@ include_release_id_if_applicable(scope_type) := null if {
 convert_recipe_to_object(recipe) := result if {
   count(recipe.allOf) > 0
   result := {"allOf": recipe.allOf}
-} else := result {
+} else := result if {
   result := {"anyOf": recipe.anyOf}
 }
 
@@ -399,7 +399,7 @@ calculate_due_date(scope_type, review_mode_key) := due_date if {
   release_start_ns := time.parse_rfc3339_ns(input.release.window_start)
   chosen := min([deadline_ns, release_start_ns])
   due_date := format_ns_as_rfc3339(chosen)
-} else := due_date {
+} else := due_date if {
   grace_period_days := policy_settings.dueDate.graceDays[review_mode_key]
   current_time_ns := time.now_ns()
   grace_period_ns := grace_period_days * 24 * 60 * 60 * 1000000000
