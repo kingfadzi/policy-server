@@ -1,0 +1,167 @@
+{
+  "catalog": {
+    "types": {
+      "confidentiality_level": {
+        "label": "Confidentiality Level",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "security.confidentiality_level",
+        "reviewer": "Security ARB"
+      },
+      "encryption_at_rest": {
+        "label": "Encryption-at-Rest",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 365,
+        "profileField": "security.encryption_at_rest",
+        "reviewer": "Security ARB"
+      },
+      "encryption_in_transit": {
+        "label": "Encryption In Transit",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "security.encryption_in_transit",
+        "reviewer": "Security ARB"
+      },
+      "security_testing": {
+        "label": "Security Testing",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 365,
+        "profileField": "security.security_testing",
+        "reviewer": "Security ARB"
+      },
+      "secrets_management": {
+        "label": "Secrets Management",
+        "uiOptions": ["text", "checkbox"],
+        "maxAgeDays": 365,
+        "profileField": "security.secrets_management",
+        "reviewer": "Security ARB"
+      },
+      "key_rotation_max": {
+        "label": "Key Rotation Maximum",
+        "uiOptions": ["text"],
+        "maxAgeDays": 180,
+        "profileField": "security.key_rotation_max",
+        "reviewer": "Security ARB"
+      },
+      "data_validation": {
+        "label": "Data Validation",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "integrity.data_validation",
+        "reviewer": "Data ARB"
+      },
+      "reconciliation_frequency": {
+        "label": "Reconciliation Frequency",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "integrity.reconciliation_frequency",
+        "reviewer": "Data ARB"
+      },
+      "audit_logging": {
+        "label": "Audit Logging",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 180,
+        "profileField": "integrity.audit_logging",
+        "reviewer": "Security ARB"
+      },
+      "change_control": {
+        "label": "Change Control",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 365,
+        "profileField": "integrity.change_control",
+        "reviewer": "Security ARB"
+      },
+      "immutability_required": {
+        "label": "Immutability Required",
+        "uiOptions": ["checkbox", "text"],
+        "maxAgeDays": 365,
+        "profileField": "integrity.immutability_required",
+        "reviewer": "Security ARB"
+      },
+      "rto_hours": {
+        "label": "Recovery Time Objective (hours)",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "availability.rto_hours",
+        "reviewer": "EA Board"
+      },
+      "rpo_minutes": {
+        "label": "Recovery Point Objective (minutes)",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "availability.rpo_minutes",
+        "reviewer": "EA Board"
+      },
+      "ha_topology": {
+        "label": "High Availability Topology",
+        "uiOptions": ["diagram", "text"],
+        "maxAgeDays": 365,
+        "profileField": "availability.ha_topology",
+        "reviewer": "EA Board"
+      },
+      "monitoring_slos": {
+        "label": "Monitoring & SLOs",
+        "uiOptions": ["url", "text"],
+        "maxAgeDays": 90,
+        "profileField": "availability.monitoring_slos",
+        "reviewer": "EA Board"
+      },
+      "oncall_coverage": {
+        "label": "On-Call Coverage",
+        "uiOptions": ["text"],
+        "maxAgeDays": 90,
+        "profileField": "availability.oncall_coverage",
+        "reviewer": "EA Board"
+      },
+      "dr_test_frequency": {
+        "label": "Disaster Recovery Test Frequency",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 180,
+        "profileField": "resilience.dr_test_frequency",
+        "reviewer": "Service Transition"
+      },
+      "backup_policy": {
+        "label": "Backup Policy",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 180,
+        "profileField": "resilience.backup_policy",
+        "reviewer": "Service Transition"
+      },
+      "failover_automation": {
+        "label": "Failover Automation",
+        "uiOptions": ["diagram", "file", "text"],
+        "maxAgeDays": 365,
+        "profileField": "resilience.failover_automation",
+        "reviewer": "Service Transition"
+      },
+      "runbook_maturity": {
+        "label": "Runbook Maturity",
+        "uiOptions": ["file", "text"],
+        "maxAgeDays": 365,
+        "profileField": "resilience.runbook_maturity",
+        "reviewer": "Service Transition"
+      },
+      "chaos_testing": {
+        "label": "Chaos Testing",
+        "uiOptions": ["file", "text", "checkbox"],
+        "maxAgeDays": 365,
+        "profileField": "resilience.chaos_testing",
+        "reviewer": "Service Transition"
+      },
+      "materiality": {
+        "label": "Materiality (Business Criticality)",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "criticality.materiality",
+        "reviewer": "EA Board"
+      },
+      "review_depth": {
+        "label": "Review Depth",
+        "uiOptions": ["text"],
+        "maxAgeDays": 365,
+        "profileField": "criticality.review_depth",
+        "reviewer": "EA Board"
+      }
+    }
+  }
+}

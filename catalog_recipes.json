@@ -1,0 +1,230 @@
+{
+  "catalog": {
+    "recipes": {
+      "Security": {
+        "Full": {
+          "scope": "release",
+          "severityByCriticality": {
+            "A": "blocker",
+            "B": "blocker",
+            "C": "high",
+            "D": "high"
+          },
+          "allOf": [
+            "confidentiality_level",
+            "encryption_at_rest",
+            "encryption_in_transit",
+            "security_testing",
+            "secrets_management",
+            "key_rotation_max",
+            "audit_logging",
+            "immutability_required",
+            "change_control"
+          ],
+          "anyOf": []
+        },
+        "Scoped": {
+          "scope": "release",
+          "severityByCriticality": {
+            "A": "high",
+            "B": "high",
+            "C": "medium",
+            "D": "medium"
+          },
+          "allOf": [
+            "encryption_at_rest",
+            "encryption_in_transit",
+            "security_testing",
+            "secrets_management"
+          ],
+          "anyOf": ["audit_logging"]
+        },
+        "Express": {
+          "scope": "release",
+          "severityByCriticality": {
+            "A": "low",
+            "B": "low",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [],
+          "anyOf": ["security_testing"]
+        }
+      },
+      "Data": {
+        "Full": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "high",
+            "B": "high",
+            "C": "medium",
+            "D": "low"
+          },
+          "allOf": [
+            "data_validation",
+            "reconciliation_frequency"
+          ],
+          "anyOf": []
+        },
+        "Scoped": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "medium",
+            "B": "medium",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": ["data_validation"],
+          "anyOf": []
+        },
+        "Express": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "low",
+            "B": "low",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [],
+          "anyOf": []
+        }
+      },
+      "EA": {
+        "Full": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "high",
+            "B": "medium",
+            "C": "medium",
+            "D": "low"
+          },
+          "allOf": [
+            "ha_topology",
+            "monitoring_slos",
+            "oncall_coverage",
+            "rto_hours",
+            "rpo_minutes"
+          ],
+          "anyOf": []
+        },
+        "Scoped": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "medium",
+            "B": "medium",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [
+            "ha_topology",
+            "rto_hours"
+          ],
+          "anyOf": []
+        },
+        "Express": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "low",
+            "B": "low",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [],
+          "anyOf": []
+        }
+      },
+      "Service Transition": {
+        "Full": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "high",
+            "B": "high",
+            "C": "medium",
+            "D": "low"
+          },
+          "allOf": [
+            "dr_test_frequency",
+            "backup_policy",
+            "failover_automation",
+            "runbook_maturity",
+            "chaos_testing"
+          ],
+          "anyOf": []
+        },
+        "Scoped": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "medium",
+            "B": "medium",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [
+            "dr_test_frequency",
+            "backup_policy"
+          ],
+          "anyOf": []
+        },
+        "Express": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "low",
+            "B": "low",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [],
+          "anyOf": []
+        }
+      },
+      "Criticality": {
+        "Full": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "high",
+            "B": "medium",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [
+            "materiality",
+            "review_depth"
+          ],
+          "anyOf": []
+        },
+        "Scoped": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "medium",
+            "B": "medium",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": ["review_depth"],
+          "anyOf": []
+        },
+        "Express": {
+          "scope": "application",
+          "severityByCriticality": {
+            "A": "low",
+            "B": "low",
+            "C": "low",
+            "D": "low"
+          },
+          "allOf": [],
+          "anyOf": []
+        }
+      }
+    },
+    "defaults": {
+      "dueDate": {
+        "graceDays": {
+          "Full": 7,
+          "Scoped": 14,
+          "Express": 30
+        }
+      }
+    },
+    "catalog_version": "2025-08-19"
+  }
+}
