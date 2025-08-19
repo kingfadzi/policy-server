@@ -1,5 +1,3 @@
-package change_arb
-
 ########################################
 # Defaults
 ########################################
@@ -361,7 +359,7 @@ requirements := [requirement |
     "scope": create_scope_object(requirement_scope),
     "release": include_release_id_if_applicable(requirement_scope),
     "severity": severity,
-    "due": calculate_due_date(requirement_scope, review_mode_key),
+    "due": calculate_due_date(requirement_scope, review_mode_key),  # <-- Returns nanoseconds
     "required_evidence_types": convert_recipe_to_object(recipe)
   }
 ]
@@ -398,18 +396,13 @@ calculate_due_date(scope_type, review_mode_key) := due_date if {
   input.release.window_start
   release_start_ns := time.parse_rfc3339_ns(input.release.window_start)
   chosen := min([deadline_ns, release_start_ns])
-  due_date := format_ns_as_rfc3339(chosen)
+  due_date := chosen    # <-- Just output the ns value! (no formatting)
 } else := due_date if {
   grace_period_days := policy_settings.dueDate.graceDays[review_mode_key]
   current_time_ns := time.now_ns()
   grace_period_ns := grace_period_days * 24 * 60 * 60 * 1000000000
   deadline_ns := current_time_ns + grace_period_ns
-  due_date := format_ns_as_rfc3339(deadline_ns)
-}
-
-# RFC3339 formatter using time.format_ns (Go layout reference time)
-format_ns_as_rfc3339(ns) := out if {
-out := time.format_ns("2006-01-02T15:04:05Z07:00", ns)
+  due_date := deadline_ns   # <-- Just output the ns value!
 }
 
 to_identifier(s) := out if {
