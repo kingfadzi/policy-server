@@ -407,8 +407,9 @@ calculate_due_date(scope_type, review_mode_key) := due_date if {
   due_date := format_ns_as_rfc3339(deadline_ns)
 }
 
+# RFC3339 formatter using time.format_ns (Go layout reference time)
 format_ns_as_rfc3339(ns) := out if {
-  out := time.format_rfc3339_ns(ns)
+out := time.format_ns("2006-01-02T15:04:05Z07:00", ns)
 }
 
 to_identifier(s) := out if {
